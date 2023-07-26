@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: rgb(21, 21, 22);
+  overflow-x: hidden;
+}
+
+.container {
+  background-image: url('./bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  top: 10vh;
+  left: 5vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  box-shadow: rgb(255, 94, 0) 5px -5px 0px 5px,
+    rgb(255, 94, 0) -5px -5px 0px 5px, rgba(255, 94, 0, 0.692) 10px -5px 0px 5px,
+    rgba(255, 94, 0, 0.692) -10px -5px 0px 5px,
+    rgba(255, 94, 0, 0.356) 15px -5px 0px 5px,
+    rgba(255, 94, 0, 0.356) -15px -5px 0px 5px;
+}
+
+h1,
+p {
+  font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(21, 21, 22);
+}
+
+h1,
+.title {
+  font-family: 'Nova Oval';
+  margin-bottom: 5px;
+  margin-left: 0.5rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.text {
+  margin-left: 1.5rem;
+  padding-top: 2rem;
+}
+
+span {
+  color: rgb(21, 21, 22);
+  font-size: 5rem;
+}
+
+/*----------TextBox----------*/
+
+.edit {
+  margin-right: 2rem;
+  max-height: 100%;
+  caret-color: currentColor;
+  outline: solid 0px transparent;
+  font-weight: 500;
+  color: rgb(21, 21, 22);
+}
+
+.edit:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(32, 32, 34, 0.699);
+}
+
+/*----------Scroll----------*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(21, 21, 22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 94, 0);
+
+  -webkit-box-shadow: rgba(255, 94, 0, 0.692) 0px 5px 0px 5px,
+    rgba(255, 94, 0, 0.356) 0px 15px 0px 5px,
+    rgba(255, 94, 0, 0.151) 0px 25px 0px 5px;
+
+  -moz-box-shadow: rgba(255, 94, 0, 0.692) 0px 5px 0px 5px,
+    rgba(255, 94, 0, 0.356) 0px 15px 0px 5px,
+    rgba(255, 94, 0, 0.151) 0px 25px 0px 5px;
+
+  box-shadow: rgba(255, 94, 0, 0.692) 0px 5px 0px 5px,
+    rgba(255, 94, 0, 0.356) 0px 15px 0px 5px,
+    rgba(255, 94, 0, 0.151) 0px 25px 0px 5px;
+
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: rgba(255, 94, 0, 0.692) 0px 10px 0px 5px,
+    rgba(255, 94, 0, 0.356) 0px 25px 0px 5px,
+    rgba(255, 94, 0, 0.151) 0px 40px 0px 5px;
+}
+
+/*----------Media----------*/
+
+@media (min-width: 1500px) {
+  .container {
+    width: 80vw;
+    left: 10vw;
+  }
+  .text {
+    padding-top: 2rem;
+  }
+  .title {
+    margin-left: 0;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  span {
+    font-size: 6rem;
+  }
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+}
