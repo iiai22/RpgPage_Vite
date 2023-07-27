@@ -6,22 +6,23 @@
   padding: 0;
 }
 
-html {
+body {
   background-color: rgb(21, 21, 22);
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
-  background-image: url('./bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #f2daac;
   width: 90vw;
-  height: 90vh;
+  min-height: 90vh;
   position: relative;
   top: 10vh;
   left: 5vw;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  bottom: 0; /* Mantém o div fixo na parte inferior da tela */
+  transition: min-height 0.2s ease-out;
 
   box-shadow: rgb(255, 94, 0) 5px -5px 0px 5px,
     rgb(255, 94, 0) -5px -5px 0px 5px, rgba(255, 94, 0, 0.692) 10px -5px 0px 5px,
@@ -107,6 +108,67 @@ span {
     rgba(255, 94, 0, 0.151) 0px 40px 0px 5px;
 }
 
+/*----------ColorPicker----------*/
+
+input[type='color'] {
+  width: 50px;
+  height: 50px;
+  border: 3px solid aliceblue;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+/* Estiliza a seta do input color (apenas em alguns navegadores) */
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+/* Estiliza a seta do input color (apenas em alguns navegadores) */
+input[type='color']::-moz-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+#reset {
+  background-color: aliceblue;
+  text-align: center;
+  position: fixed;
+  bottom: 2rem;
+  right: 6rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#reset:active {
+  transform: translateY(2px);
+  box-shadow: rgba(0, 0, 0, 0.596) 0 3px;
+}
+
+#reset:hover {
+  background-color: rgb(221, 231, 238);
+}
+
+.color {
+  box-shadow: rgba(0, 0, 0, 0.301) 0 5px;
+}
+
+.resetT {
+  position: relative;
+  top: 15px;
+  font-weight: 600;
+}
 /*----------Media----------*/
 
 @media (min-width: 1500px) {
@@ -127,5 +189,13 @@ span {
   }
   ::-webkit-scrollbar {
     width: 15px;
+  }
+
+  #reset:active {
+    box-shadow: rgba(255, 255, 255, 0.596) 0 3px;
+  }
+
+  .color {
+    box-shadow: rgba(255, 255, 255, 0.301) 0 5px;
   }
 }
