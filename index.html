@@ -10,24 +10,42 @@
     <div class="container">
       <div class="text">
         <h1 class="title"><span>C</span>rab</h1>
-        <p
-          contenteditable="true"
-          class="edit"
-          data-placeholder="Edit me"
-          id="editMe"
-        ></p>
+        <div id="sink">
+          <p
+            contenteditable="true"
+            class="edit"
+            data-placeholder="Edit me"
+            id="editMe"
+          ></p>
+        </div>
       </div>
     </div>
 
-    <input type="color" id="colorPicker" value="#151516" class="color" />
-    <div id="reset" class="color button">
-      <p class="resetT">Reset</p>
-    </div>
-    <div class="fontSelector" id="fontSelector">
-      <p class="sele"></p>
+    <div class="toolBox">
+      <input type="color" id="colorPicker" value="#151516" class="color tool" />
+      <div id="reset" class="color button tool">
+        <p class="resetT">Reset</p>
+      </div>
+      <div class="button fontSelector tool" id="fontSelector">
+        <p class="selectorT">Font selector</p>
+
+        <select
+          id="selecth1FontFamily"
+          name="selectFontFamily"
+          onchange="updateh1family();"
+        >
+          <option>Default</option>
+          <option disabled>Serif</option>
+          <option disabled>Arial</option>
+          <option disabled>Tahoma</option>
+          <option disabled>Verdana</option>
+          <option disabled>Lucida Sans Unicode</option>
+        </select>
+      </div>
     </div>
 
     <script type="module" src="/main.js"></script>
     <script type="module" src="/colorPicker.js"></script>
+    <script type="module" src="/fontSelector.js"></script>
   </body>
 </html>
