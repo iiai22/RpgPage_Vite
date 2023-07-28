@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=MedievalSharp&family=Nova+Cut&family=Nova+Oval&family=Nova+Script&family=Tangerine&family=Zeyada&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/9914bd8223.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Vite App</title>
   </head>
   <body>
@@ -29,13 +33,26 @@
 
     <div class="toolBox">
       <input type="color" id="colorPicker" value="#151516" class="color tool" />
+
       <div id="reset" class="color button tool">
         <p class="resetT">Reset</p>
       </div>
+
       <div class="button fontSelector tool" id="fontSelector">
         <p class="selectorT">Font selector</p>
-
         <select id="select" onchange="return fontChange();"></select>
+      </div>
+
+      <div class="zoomFont tool button">
+        <i
+          class="fa-solid fa-magnifying-glass-plus fa-xl zoomIn zoomIO"
+          id="zoomIn"
+        ></i>
+        <p id="percent">100%</p>
+        <i
+          class="fa-solid fa-magnifying-glass-minus fa-xl zoomOut zoomIO"
+          id="zoomOut"
+        ></i>
       </div>
     </div>
 

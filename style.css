@@ -229,6 +229,31 @@ select::-ms-expand {
 option {
   background-color: aliceblue;
 }
+
+/*----------Zoom----------*/
+
+.zoomFont {
+  background-color: aliceblue;
+  bottom: 1.2rem;
+  right: 18rem;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.zoomIO {
+  transition: color 0.3s ease-in-out;
+  color: rgb(21, 21, 22);
+}
+
+.zoomIO:hover {
+  color: rgba(0, 0, 0, 0.74);
+}
+
+#percent {
+  font-weight: 500;
+}
 /*----------Media----------*/
 
 @media (min-width: 1500px) {
