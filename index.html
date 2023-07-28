@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=MedievalSharp&family=Nova+Cut&family=Nova+Oval&family=Nova+Script&family=Tangerine&family=Zeyada&display=swap"
+      rel="stylesheet"
+    />
     <title>Vite App</title>
   </head>
   <body>
@@ -29,18 +35,7 @@
       <div class="button fontSelector tool" id="fontSelector">
         <p class="selectorT">Font selector</p>
 
-        <select
-          id="selecth1FontFamily"
-          name="selectFontFamily"
-          onchange="updateh1family();"
-        >
-          <option>Default</option>
-          <option disabled>Serif</option>
-          <option disabled>Arial</option>
-          <option disabled>Tahoma</option>
-          <option disabled>Verdana</option>
-          <option disabled>Lucida Sans Unicode</option>
-        </select>
+        <select id="select" onchange="return fontChange();"></select>
       </div>
     </div>
 

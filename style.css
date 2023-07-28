@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&family=VT323&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,20 +29,14 @@ body {
     rgba(255, 94, 0, 0.356) -15px -5px 0px 5px;
 }
 
-h1,
 p {
-  font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: rgb(21, 21, 22);
+  font-family: 'Segoe UI';
 }
 
-h1,
 .title {
   font-family: 'Nova Oval';
   margin-bottom: 5px;
   margin-left: 0.5rem;
-}
-
-.title {
   text-align: center;
 }
 
