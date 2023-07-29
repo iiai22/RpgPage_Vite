@@ -1,3 +1,5 @@
+import { resetZoom } from './colorPicker.js';
+
 // Lista de fontes disponíveis
 var fonts = [
   { name: 'Segoe UI', size: '24px' },
@@ -55,3 +57,67 @@ window.addEventListener('DOMContentLoaded', function () {
   var select = document.getElementById('select');
   select.addEventListener('change', fontChange);
 });
+
+var originalFontSize; // Variável para armazenar o tamanho de fonte inicial em pixels
+var currentZoom = 0; // Contador para controlar o zoom
+
+// Função para atualizar o tamanho da fonte do texto
+function updateFontSize() {
+  var text = document.getElementById('editMe');
+  var newSize = originalFontSize * (1 + currentZoom / 100); // Calcula o tamanho de fonte com o zoom atual
+
+  // Limita o tamanho mínimo e máximo da fonte
+  newSize = Math.max(newSize, originalFontSize * 0.5); // Mínimo 50%
+  newSize = Math.min(newSize, originalFontSize * 1.5); // Máximo 150%
+
+  text.style.fontSize = newSize + 'px';
+}
+
+// Função para aumentar o zoom em 10%
+function zoomIn() {
+  currentZoom += 10; // Aumenta o zoom em 10%
+
+  // Limita a porcentagem de zoom entre 50% e 150%
+  currentZoom = Math.min(currentZoom, 50);
+  currentZoom = Math.max(currentZoom, -50);
+
+  updateFontSize();
+  updatePercent();
+}
+
+// Função para diminuir o zoom em 10%
+function zoomOut() {
+  currentZoom -= 10; // Diminui o zoom em 10%
+
+  // Limita a porcentagem de zoom entre 50% e 150%
+  currentZoom = Math.min(currentZoom, 50);
+  currentZoom = Math.max(currentZoom, -50);
+
+  updateFontSize();
+  updatePercent();
+}
+
+// Função para atualizar a porcentagem de zoom exibida
+function updatePercent() {
+  var percent = 100 + currentZoom; // Calcula a porcentagem de zoom com base no tamanho base de 100%
+  document.getElementById('percent').textContent = percent + '%';
+}
+
+// Adiciona um evento de escuta ao carregar a página
+window.addEventListener('DOMContentLoaded', function () {
+  // Obtém o tamanho de fonte inicial do texto
+  var text = document.getElementById('editMe');
+  originalFontSize = parseFloat(window.getComputedStyle(text).fontSize);
+
+  // Define a fonte inicial ao carregar a página
+  updateFontSize();
+  updatePercent();
+});
+
+// Adiciona um evento de escuta para o botão de zoomIn
+var zoomInButton = document.getElementById('zoomIn');
+zoomInButton.addEventListener('click', zoomIn);
+
+// Adiciona um evento de escuta para o botão de zoomOut
+var zoomOutButton = document.getElementById('zoomOut');
+zoomOutButton.addEventListener('click', zoomOut);
