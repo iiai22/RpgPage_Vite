@@ -1,5 +1,3 @@
-import { resetZoom } from './colorPicker.js';
-
 // Lista de fontes disponíveis
 var fonts = [
   { name: 'Segoe UI', size: '24px' },
